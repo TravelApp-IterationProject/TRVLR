@@ -7,15 +7,24 @@ body {
     height:2200px;
 }
 #Bigtable {
-    width:100%;
+    float:left;
+    width:80%;
     height:2200px;
+    
+}
+
+#Login {
+    float:left;
+    width:80%;
+    height:2200px;
+    background-color: #eeeeee;
     
 }
 #Sidebar {
     width:18%;
     height:650px;
     float:left;
-    position:fixed;
+    position:relative;
     }
 
  #logo {
