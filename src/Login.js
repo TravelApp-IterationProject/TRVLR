@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Bigtable from './Bigtable.js';
 import { Route, Redirect } from 'react-router'
+import axios from 'axios';
 
 class Login extends React.Component {
 
@@ -61,7 +62,7 @@ class Login extends React.Component {
           <Link to='/CreateAccount'>Create Account</Link>
 
           {(isSignedIn === true) &&  <Redirect to='/Bigtable'/>}
-          {(isSignedIn === false) && <p>Username and password combination is invalid.</p>}
+          {(isSignedIn === false) && <p>Username and password combination is invalid</p>}
         </div>
       </div>
     )
