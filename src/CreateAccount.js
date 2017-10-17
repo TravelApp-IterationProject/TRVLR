@@ -1,11 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
 import ReactDOM from 'react-dom';
-import Sidebar from './Sidebar.js'
-import Mainpage from './Mainpage.js'
-import axios from 'axios'
-import yelpApi from '../controllers/yelpApi'
-import fetch from 'isomorphic-fetch'
 import { Link } from 'react-router-dom';
 
 var that;
@@ -15,17 +9,37 @@ class CreateAccount extends React.Component {
     super(props);
     this.state = {
     };
+    this.create = this.create.bind(this)
+  }
+
+  create() {
+    //plugin get request here
+    console.log("logging in!");
   }
 
   render() {
     return (
-      <div id='Login'>
-           <nav id="Login">
-          <Link to='/Login'>After CreateAccount, go to LOGIN</Link>
-        </nav>
+      <div className='routed-component'>
+        <div className="login-container">
+        <h1>Create Account</h1>
+        <form onSubmit={this.create}>
+        <input name="username" type="text" placeholder="username"></input>
+        <input name="password" type="password" placeholder="password"></input>
+        <input type='submit' value="login"></input>
+        </form>
+       
+           <Link to='/'>Login</Link>
+        </div>
       </div>
    
     )
   }
 }
 export default CreateAccount;
+
+  // <form method="POST" action='/login'>
+  //   <input name="username" type="text" placeholder="username"></input>
+  //   <input name="password" type="password" placeholder="password"></input>
+  //   <input type='submit' value="login">
+  // </form>
+  // <a href='./signup'>Sign up</a>

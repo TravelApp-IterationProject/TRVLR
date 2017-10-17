@@ -1,11 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
 import ReactDOM from 'react-dom';
-import Sidebar from './Sidebar.js'
-import Mainpage from './Mainpage.js'
-import axios from 'axios'
-import yelpApi from '../controllers/yelpApi'
-import fetch from 'isomorphic-fetch'
 import { Link } from 'react-router-dom';
 
 var that;
