@@ -8,12 +8,30 @@ import styles from '../style.css'
 import Mainpage from './Mainpage'
 
 class App extends React.Component {
-  
+  constructor() {
+    super();
+    this.state = {
+      currentUser: ''
+    };
+    this.update = this.update.bind(this)
+  }
+
+  update(obj) {
+    this.setState(obj, function() {
+    });
+  }
+
   render() {
     return (
       <div>
-      <Sidebar />
-      <RoutedComponent />
+      <Sidebar 
+      currentUser={this.state.currentUser}
+      update={this.update}
+      />
+      <RoutedComponent 
+      currentUser={this.state.currentUser}
+      update={this.update}
+      />
       </div>
     )
   }
