@@ -32,6 +32,7 @@ class App extends React.Component {
       currentUser={this.state.currentUser}
       update={this.update}
       />
+
       </div>
     )
   }
