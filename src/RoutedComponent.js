@@ -3,10 +3,11 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import ReactDOM from 'react-dom';
 import Login from './Login.js';
+import CreateAccount from './CreateAccount.js';
 import Bigtable from './Bigtable.js';
 
 
-class RoutedComp extends React.Component {
+class RoutedComponent extends React.Component {
   
     constructor(props) {
       super(props);
@@ -16,10 +17,11 @@ class RoutedComp extends React.Component {
   
     render() {
       return (
-        <div id='Bigtable'>
+        <div id='routed-component'>
 
           <Switch>
             <Route exact path='/' component={Login}/>
+            <Route exact path='/CreateAccount' component={Login}/>
             <Route path='/Bigtable' component={Bigtable}/>
            </Switch>
   
@@ -30,4 +32,4 @@ class RoutedComp extends React.Component {
       )
     }
   }
-  export default RoutedComp;
+  export default RoutedComponent;

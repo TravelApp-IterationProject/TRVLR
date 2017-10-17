@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import ReactDOM from 'react-dom';
 
 import Sidebar from './Sidebar.js';
-import RoutedComp from './RoutedComp.js';
+import RoutedComponent from './RoutedComponent.js';
 import styles from '../style.css'
 import Mainpage from './Mainpage'
 
@@ -12,7 +12,7 @@ class App extends React.Component {
     return (
       <div>
       <Sidebar />
-      {<RoutedComp />}
+      <RoutedComponent />
       </div>
     )
   }

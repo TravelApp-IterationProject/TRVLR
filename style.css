@@ -1,19 +1,29 @@
 body {
     margin:0;
     padding:0;
+    overflow: hidden; 
 }
 #mount {
     width:100%;
     height:2200px;
 }
-#Bigtable {
+.routed-component {
     float:left;
     width:80%;
     height:2200px;
-    
+    background-color: #eeeeee;
 }
 
-#Login {
+.login-container {
+    width: 500px;
+    height: 200px;
+    top: 50%;
+    /* left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); */
+}
+
+#Bigtable {
     float:left;
     width:80%;
     height:2200px;

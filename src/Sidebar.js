@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -12,7 +11,8 @@ class Sidebar extends React.Component {
     <li id = 'list'>
       <ul className ="navi">Tour App will help you decide where to visit next.</ul>
     </li>
-
+    
+    {/* <Link to='/CreateAccount'>Create Account</Link> */}
      </div>     
    )
  }
