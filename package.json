@@ -11,6 +11,8 @@
   "author": "Team Wind",
   "license": "ISC",
   "dependencies": {
+    "pg": "^6.4.2",
+    "react-cookie": "^2.1.1",
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {

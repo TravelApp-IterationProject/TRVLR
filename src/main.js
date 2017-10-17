@@ -7,13 +7,13 @@ import App from './App.js';
 import styles from '../style.css'
 import Mainpage from './Mainpage'
 
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 
 document.addEventListener('DOMContentLoaded', function () {
   render(
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>,
+    </HashRouter>,
     document.getElementById('mount')
   );
 });
