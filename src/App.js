@@ -8,6 +8,7 @@ import styles from '../style.css'
 import Mainpage from './Mainpage'
 
 class App extends React.Component {
+  
   render() {
     return (
       <div>
