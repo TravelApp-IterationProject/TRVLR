@@ -87,7 +87,7 @@ app.post('/api/login', (req, res, next) => {
   });
 })
 
-//post request for signup page
+//post request for signup page --- sending created user into db
 app.post('/api/signup', (req, res, next) => {
   let results;
   const data = req.body;

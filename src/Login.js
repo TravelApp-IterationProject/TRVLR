@@ -60,7 +60,7 @@ class Login extends React.Component {
           <Link to='/CreateAccount'>Create Account</Link>
 
           {(isSignedIn === true) &&  <Redirect to='/Bigtable'/>}
-          {(isSignedIn === false) && <p>Username and password combination is invalid.</p>}
+          {(isSignedIn === false) && <p>Username and password combination is invalid</p>}
         </div>
       </div>
     )
