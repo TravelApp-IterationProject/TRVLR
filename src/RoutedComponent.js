@@ -21,7 +21,7 @@ class RoutedComponent extends React.Component {
 
           <Switch>
             <Route exact path='/' component={Login}/>
-            <Route exact path='/CreateAccount' component={Login}/>
+            <Route exact path='/CreateAccount' component={CreateAccount}/>
             <Route path='/Bigtable' component={Bigtable}/>
            </Switch>
   
