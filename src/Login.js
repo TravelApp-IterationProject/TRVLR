@@ -35,8 +35,8 @@ class Login extends React.Component {
         </form>
        
            <Link to='/CreateAccount'>Create Account</Link>
-          After Authentication, goes
-          <Link to='/Bigtable'>HERE</Link>
+          <br /><br />(After Authentication, goes
+          <Link to='/Bigtable'>HERE)</Link>
         </div>
       </div>
    

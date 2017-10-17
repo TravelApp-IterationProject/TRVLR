@@ -2,31 +2,45 @@ body {
     margin:0;
     padding:0;
     overflow: hidden; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 #mount {
     width:100%;
-    height:2200px;
+    height:100%;
 }
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .routed-component {
     float:left;
     width:80%;
-    height:2200px;
+    height:100%;
     background-color: #eeeeee;
 }
 
 .login-container {
+    position: relative;
     width: 500px;
     height: 200px;
-    top: 50%;
-    /* left: 50%;
+    top: 40%;
+    left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+input {
+    border: none;
+    padding: 10px;
+    margin: 10px;
 }
 
 #Bigtable {
     float:left;
     width:80%;
-    height:2200px;
+    height:100%;
     background-color: #eeeeee;
     
 }
