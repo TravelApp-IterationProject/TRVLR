@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import Bigtable from './Bigtable.js';
-import { Route, Redirect } from 'react-router'
+import { Route, Redirect } from 'react-router';
 import axios from 'axios';
 
 
@@ -19,8 +19,9 @@ class Login extends React.Component {
     this.login = this.login.bind(this)
     this.usernameChanged = this.usernameChanged.bind(this)
     this.passwordChanged = this.passwordChanged.bind(this)
+    // this.updateTopState = this.updateTopState.bind(this)
   }
-
+  
   login(e) {
     e.preventDefault()
     const { username, password } = this.state
@@ -30,7 +31,7 @@ class Login extends React.Component {
         password
       })
       .then(() => {
-        this.setState({ isSignedIn: true })
+        this.setState({ isSignedIn: true }, this.updateTopState)
       })
       .catch(() => {
         this.setState({ isSignedIn: false })
@@ -46,6 +47,11 @@ class Login extends React.Component {
   passwordChanged(e) {
     const { value } = e.target
     this.setState(state => ({ password: value }))
+  }
+
+  updateTopState() {
+    let obj = { currentUser: this.state.username };
+    this.props.update(obj);
   }
 
   render() {
@@ -69,10 +75,3 @@ class Login extends React.Component {
   }
 }
 export default Login;
-
-  // <form method="POST" action='/login'>
-  //   <input name="username" type="text" placeholder="username"></input>
-  //   <input name="password" type="password" placeholder="password"></input>
-  //   <input type='submit' value="login">
-  // </form>
-  // <a href='./signup'>Sign up</a>
