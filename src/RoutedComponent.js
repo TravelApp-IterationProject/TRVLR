@@ -16,20 +16,21 @@ class RoutedComponent extends React.Component {
     }
   
     render() {
+      
       return (
         <div id='routed-component'>
 
           <Switch>
-            <Route exact path='/' component={Login}/>
+            <Route exact path="/" component={() => <Login update={this.props.update} currentUser={this.state.currentUser}/>} />
             <Route exact path='/CreateAccount' component={CreateAccount}/>
-            <Route path='/Bigtable' component={Bigtable}/>
+            <Route path='/Bigtable' component={() => <Bigtable update={this.props.update} currentUser={this.state.currentUser}/>}/>
            </Switch>
   
         </div>
-        // <nav id="Login">
-        //     <Link to='/Bigtable'>HERE</Link>
-        //   </nav>
       )
     }
   }
   export default RoutedComponent;
+
+ 
+
