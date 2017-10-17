@@ -1,4 +1,6 @@
+console.log("bigtable.js loaded");
 import React from 'react';
+import { render } from 'react-dom';
 import ReactDOM from 'react-dom';
 import Sidebar from './Sidebar.js'
 import Mainpage from './Mainpage.js'
@@ -209,7 +211,6 @@ class Bigtable extends React.Component {
   render() {
     return (
       <div id='Bigtable'>
-        <Sidebar />
         <Mainpage
           mention={this.state.mention}
           first={this.state.first}

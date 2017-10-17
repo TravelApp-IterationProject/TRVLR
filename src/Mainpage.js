@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import Threeimgs from './Threeimgs.js';
 import Suggestions from './Suggestions.js';
 
