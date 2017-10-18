@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const bcrypt = require('bcrypt');
 const app = express();
 
 const mongoose = require('mongoose');
@@ -57,7 +58,7 @@ const connectionString = 'postgres://feiagvsn:EFHbahERzziHeEeN0kjPv9-5j0vvWUpa@e
 app.post('/api/login', (req, res, next) => {
   let results = [];
   // Get a Postgres client from the connection pool
-  pg.connect(connectionString, (err, client, done) => {  
+  pg.connect(connectionString, (err, client, done) => {
     // Handle connection errors
     if (err) {
       done();
@@ -67,22 +68,22 @@ app.post('/api/login', (req, res, next) => {
     }
     // SQL Query > Select Data
     const query = client.query('SELECT * FROM "users";');
-   
-   var user = null;
+
+    var user = null;
     query.on('row', (row) => {
-      if (row.username === req.body.username && row.password === req.body.password) {
-        user = row
+      if(row.username === req.body.username && bcrypt.compareSync(req.body.password, row.password)) {
+        user = row;
       }
     });
     // After all data is returned, close connection and set cookie which will be user_id
     query.on('end', () => {
       done();
       if (user) {
-          res.cookie('user_id', user.user_id);
-          res.status(200).send();``
-        } else {
-          res.status(401).send();
-        }
+        res.cookie('user_id', user.user_id);
+        res.status(200).send();
+      } else {
+        res.status(401).send();
+      }
     });
   });
 })
@@ -99,8 +100,14 @@ app.post('/api/signup', (req, res, next) => {
       return res.status(500).json({ success: false, data: err });
     }
 
-    client.query('INSERT INTO users (username, password) VALUES ($1, $2);',
-      [data.username, data.password]);
+    bcrypt.hash(data.password, 10, function (err, hash) {
+      if (err) throw err;
+      else {
+        client.query('INSERT INTO users (username, password) VALUES ($1, $2);',
+          [data.username, hash]);
+      }
+
+    });
 
     const query = client.query('SELECT * FROM "users";');
     query.on('row', (row) => {

@@ -7,6 +7,8 @@ import Mainpage from './Mainpage.js'
 import axios from 'axios'
 import yelpApi from '../controllers/yelpApi'
 import fetch from 'isomorphic-fetch'
+import App from './App.js';
+import { Route, Redirect } from 'react-router';
 
 var that;
 class Bigtable extends React.Component {
@@ -223,6 +225,8 @@ class Bigtable extends React.Component {
           suggest={this.suggest}
           suggestions={this.state.suggestion}
         />
+
+        { (!this.props.currentUser) &&  <Redirect to='/' /> }
       </div>
     )
   }
