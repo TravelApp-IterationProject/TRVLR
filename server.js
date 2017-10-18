@@ -79,7 +79,7 @@ app.post('/api/login', (req, res, next) => {
       done();
       if (user) {
           res.cookie('user_id', user.user_id);
-          res.status(200).send();``
+          res.status(200).send();
         } else {
           res.status(401).send();
         }
