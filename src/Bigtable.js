@@ -226,7 +226,7 @@ class Bigtable extends React.Component {
           suggestions={this.state.suggestion}
         />
 
-        { (!this.props.currentUser) &&  <Redirect to='/' /> };
+        { (!this.props.currentUser) &&  <Redirect to='/' /> }
       </div>
     )
   }

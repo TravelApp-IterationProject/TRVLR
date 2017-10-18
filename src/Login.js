@@ -19,7 +19,7 @@ class Login extends React.Component {
     this.login = this.login.bind(this)
     this.usernameChanged = this.usernameChanged.bind(this)
     this.passwordChanged = this.passwordChanged.bind(this)
-    // this.updateTopState = this.updateTopState.bind(this)
+    this.updateTopState = this.updateTopState.bind(this)
   }
 
   login(e) {
@@ -56,6 +56,7 @@ class Login extends React.Component {
 
   render() {
     const { username, password, isSignedIn } = this.state
+    
     return (
       <div className='routed-component'>
         <div className="login-container">

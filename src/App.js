@@ -17,8 +17,7 @@ class App extends React.Component {
   }
 
   update(obj) {
-    this.setState(obj, function() {
-    });
+    this.setState(obj);
   }
 
   render() {
