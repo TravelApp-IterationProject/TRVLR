@@ -210,7 +210,7 @@ class Bigtable extends React.Component {
 
   render() {
     return (
-      <div id='Bigtable'>
+      <div>
         <Mainpage
           mention={this.state.mention}
           first={this.state.first}

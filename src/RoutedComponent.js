@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import Login from './Login.js';
 import CreateAccount from './CreateAccount.js';
 import Bigtable from './Bigtable.js';
+import Results from './Results.js';
 
 
 class RoutedComponent extends React.Component {
@@ -24,6 +25,7 @@ class RoutedComponent extends React.Component {
             <Route exact path="/" component={() => <Login update={this.props.update} currentUser={this.state.currentUser}/>} />
             <Route exact path='/CreateAccount' component={CreateAccount}/>
             <Route path='/Bigtable' component={() => <Bigtable update={this.props.update} currentUser={this.state.currentUser}/>}/>
+            {/* <Route path='/Results' component={() => <Results update={this.props.update} currentUser={this.state.currentUser}/>}/> */}
            </Switch>
   
         </div>

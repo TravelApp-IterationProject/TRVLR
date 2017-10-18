@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import Threeimgs from './Threeimgs.js';
 import Suggestions from './Suggestions.js';
 
-class Mainpage extends React.Component {
+class Results extends React.Component {
 
   render() {
     let result = [];
@@ -20,19 +20,8 @@ class Mainpage extends React.Component {
       </div>)
     }
     return (
-      // <div id='Mainpage'>
       <div>
-        <Threeimgs
-          mention={this.props.mention}
-          first={this.props.first}
-          second={this.props.second}
-          toggle={this.props.toggle}
-          toggler={this.props.toggler}
-          firstpics={this.props.firstpics}
-          secondpics={this.props.secondpics}
-        />
-       {/* <div id='Righthalf'> */}
-        <div>
+        <div className="results-box">
           {result}
           {console.log('suggestion props: ', this.props.suggestions)}
           {
@@ -45,4 +34,4 @@ class Mainpage extends React.Component {
     )
   }
 }
-export default Mainpage;
+export default Results;
