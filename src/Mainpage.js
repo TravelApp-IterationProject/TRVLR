@@ -5,12 +5,19 @@ import Threeimgs from './Threeimgs.js';
 import Suggestions from './Suggestions.js';
 
 class Mainpage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
   render() {
     let result = [];
     let split = ['resultone', 'resulttwo', 'resultthree', 'resultfour'];
+    
+    if (this.props.data === '') {
+    console.log("no data");
     for (let i = 0; i < this.props.data.length; i++) {
-
       result.push(<div id={split[i]} className='result'>
         {this.props.data[i]}
         <div className="container">
@@ -19,8 +26,12 @@ class Mainpage extends React.Component {
         </div>
       </div>)
     }
+  }
+  
+
     return (
-      <div id='Mainpage'>
+      // <div id='Mainpage'>
+      <div>
         <Threeimgs
           mention={this.props.mention}
           first={this.props.first}
@@ -30,7 +41,8 @@ class Mainpage extends React.Component {
           firstpics={this.props.firstpics}
           secondpics={this.props.secondpics}
         />
-        <div id='Righthalf'>
+       {/* <div id='Righthalf'> */}
+        <div>
           {result}
           {console.log('suggestion props: ', this.props.suggestions)}
           {
