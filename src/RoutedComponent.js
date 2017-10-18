@@ -24,7 +24,7 @@ class RoutedComponent extends React.Component {
           <Switch>
             <Route exact path="/" component={() => <Login update={this.props.update} currentUser={this.props.currentUser}/>} />
             <Route exact path='/CreateAccount' component={CreateAccount}/>
-            <Route path='/Bigtable' component={() => <Bigtable update={this.props.update} currentUser={this.state.currentUser}/>}/>
+            <Route path='/Bigtable' component={() => <Bigtable update={this.props.update} currentUser={this.props.currentUser}/>}/>
             {/* <Route path='/Results' component={() => <Results update={this.props.update} currentUser={this.state.currentUser}/>}/> */}
            </Switch>
   
